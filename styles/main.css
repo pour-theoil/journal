@@ -41,16 +41,15 @@ h1{
    max-width: 100%
 }
 
-.journal {
+#journal {
     background-color: #2a9d8f;
     border-radius: 5px;
     margin: auto 5px;
     width: 50%;
     max-height: 300px;
-    overflow: auto;
-    white-space: nowrap;
 }
 
 footer {
     text-align: center;
+
 }
