@@ -11,30 +11,37 @@ header {
 
 h1{
     margin-top: 0;
-    padding-top: 50px;
+    padding: 25px 0;
     text-align: center;
 }
 .maincontent {
-    margin: 0 5%;
+    margin: 20px 5%;
     display: flex;
     height: auto;
     align-content: center;
 }
 
+.statement {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
 .personal {
     background-color: #2a9d8f;
-    margin: auto 5px;
-    padding: 5px;
-    width: 25%;
+    margin: 0 5px;
+    padding: 10px;
+    margin: 10px 5px;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
 }
 
 .photo {
     background-color: #2a9d8f;
     border-radius: 5px;
-    margin: auto 5px;
+    margin: 10px 5px;
     padding: 10px;
-    width: 25%;
+    width: 100%;
 }
 
 .headshot {
@@ -42,14 +49,25 @@ h1{
 }
 
 #journal {
+    flex: 3;
     background-color: #2a9d8f;
     border-radius: 5px;
-    margin: auto 5px;
-    width: 50%;
-    max-height: 300px;
+    margin: 10px;
+    margin-left: 40px;
+    padding: 10px;
+    width: 100%;
 }
 
 footer {
-    text-align: center;
+   margin: 10px;   
+   display: flex;
+   justify-content: center;
+}
 
+h6 {
+    background-color: #fe5d26;
+    width: 25%;
+    margin: 10px;
+    border-radius: 5px; 
+    text-align: center
 }
