@@ -1,5 +1,7 @@
 export const journalEntry = (journalObj) => {
-    return (`<article class="journal-card">
+    return (`
+    <hr>
+    <article class="journal-card"> 
         <h3 class="journal-title">${journalObj.title}</h3>
         <p class="journal-date">${journalObj.date}</p>
         <p class="journal-entry">${journalObj.description}</p>
