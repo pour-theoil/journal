@@ -4,7 +4,7 @@ import { getJournal } from "./journallist.js";
 const showjournalentries = () => {
     const postElement = document.querySelector("#journal");
       getjournalentry().then((allPosts) => {
-          postElement.innerHTML = getJournal(allPosts);
+          postElement.innerHTML += getJournal(allPosts);
       })
 }
 
