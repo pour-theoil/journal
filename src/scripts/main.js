@@ -14,3 +14,8 @@ const startJournal = () => {
 }
 
 startJournal();
+
+const applicationElement =document.querySelector("body");
+applicationElement.addEventListener("click", event => {
+    console.log("You Clicked on: ", event.target)
+})
