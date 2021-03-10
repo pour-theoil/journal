@@ -28,6 +28,13 @@
         " github"
       ],
       "id": 3
+    },
+    {
+      "title": "Learning how to input",
+      "technologyTag": ".json .js",
+      "description": "This is trying to get the date function to work",
+      "date": "2021-03-10",
+      "id": 4
     }
   ]
 }

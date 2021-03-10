@@ -15,7 +15,6 @@ const startJournal = () => {
     showjournalentries();
 }
 
-startJournal();
 
 const applicationElement =document.querySelector("body");
 applicationElement.addEventListener("click", event => {
@@ -29,13 +28,12 @@ applicationElement.addEventListener("click", event => {
       const title = document.querySelector("input[name='postTitle']").value
       const tag = document.querySelector("input[name='postTag']").value
       const description = document.querySelector("textarea[name='postDescription']").value
-      //we have not created a user yet - for now, we will hard code `1`.
-      //we can add the current time as well
+      const date = document.querySelector("input[name='postDate']").value
       const postObject = {
           title: title,
           technologyTag: tag,
           description: description,
-          date: Date().now().toUTCString().toLocaleString()
+          date: date
     }
   
     // be sure to import from the DataManager
@@ -51,4 +49,7 @@ const showPostEntry = () => {
     entryElement.innerHTML = PostEntry();
     
 }
+
+
 showPostEntry();
+startJournal();
