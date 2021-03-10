@@ -19,7 +19,9 @@ export const createPost = postObj => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(postObj)
-  
+        
     })
         .then(response => response.json())
+        .then(getjournalentry())
+        
 }
