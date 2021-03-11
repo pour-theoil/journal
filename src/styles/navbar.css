@@ -10,11 +10,17 @@
   float: left;
 }
 
+.searchbar {
+  padding: 1em;
+  float: center;
+  vertical-align:baseline;
+}
+
 .nav a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1em ;
   text-decoration: none;
 }
 

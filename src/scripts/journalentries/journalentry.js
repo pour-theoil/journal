@@ -1,6 +1,6 @@
 export const PostEntry = () => {
     return `
-    <div>
+    <form>
         <div class=inputTags>
             <input value=""
                     name="postTitle"
@@ -12,6 +12,14 @@ export const PostEntry = () => {
                     class="newPost__input"
                     type="text"
                     placeholder="Tech Tags" />
+            <label for="postMood">Current Mood:</label>
+            <select name="postMood" class="newPost__input">
+                <option value="Perplexed">Perplexed</option>
+                <option value="Weepy">Weepy</option>
+                <option value="Tenacious">Tenacious</option>
+                <option value="Marvelous">Marvelous</option>
+                <option value="Creative">Creative</option>
+            </select>
             <label for="postdate">Entry Date:</label>            
             <input value=""
                     name="postDate"
@@ -25,6 +33,6 @@ export const PostEntry = () => {
             placeholder="Journal entry text... "></textarea>
         <button id="newPost__submit">Save</button>
         <button id="newPost__cancel">Cancel</button>
-    </div>    
+    </form>    
     `
 }
