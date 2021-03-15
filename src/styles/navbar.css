@@ -10,9 +10,10 @@
   float: left;
 }
 
-.searchbar {
+.moodbar {
   padding: 1em;
-  float: center;
+  float: right;
+  color: white;
   vertical-align:baseline;
 }
 

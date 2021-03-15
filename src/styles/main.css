@@ -46,7 +46,7 @@ h1{
 .photo {
     background-color: #2a9d8f;
     border-radius: 5px;
-    margin: 5px 5px 10px 5px;
+    margin: 5px;
     padding: 10px;
     width: 300px;
 }
@@ -68,9 +68,13 @@ h1{
     overflow: auto;
     background-color: #2a9d8f;
     border-radius: 5px;
-    margin: 10px 5px 10px 40px;
+    margin: 10px 5px 5px 5px;
     padding: 10px;
     width: 100%;
+}
+
+#journal::-webkit-scrollbar {
+    display: none;
 }
 
 .formBox{
@@ -86,13 +90,13 @@ h1{
 }
 .newPost__description {
     width: 100%;
-    min-height: 100px;
+    min-height: 5em;
 }
 
 .inputTags {
     display: flex;
     justify-content: space-around;
-    padding: auto;
+    margin-bottom: .5em;
 }
 
 footer {
@@ -101,4 +105,5 @@ footer {
    position: fixed;
    text-align: center;
    width: 100%;
+   z-index: auto;
 }
