@@ -8,7 +8,7 @@
         " .css",
         " .html"
       ],
-      "mood": "happy",
+      "mood": "Creative",
       "id": 2
     },
     {
@@ -21,7 +21,7 @@
         " git",
         " github"
       ],
-      "mood": "happy",
+      "mood": "Weepy",
       "id": 3
     },
     {
@@ -39,6 +39,46 @@
       "date": "2021-03-10",
       "mood": "happy",
       "id": 4
+    },
+    {
+      "title": "Adding Moods",
+      "technologyTag": ".json .js",
+      "description": "I feel like this has been quite a fun challenge. Learning how to implement drop down menus was the first task. After that getting the spacing and css to work as a bit of a task. I had a couple of issues controlling the filter so that it would list all of the possible moods as well as then being able to see all of the posts again. Next steps... a little css refresh to react better to different screen sizes.",
+      "mood": "Perplexed",
+      "date": "2021-03-11",
+      "id": 5
+    },
+    {
+      "title": "Will this work well for me",
+      "technologyTag": ".css",
+      "description": "Maybe this will work?",
+      "mood": "Marvelous",
+      "date": "2021-03-10",
+      "id": 6
+    },
+    {
+      "title": "Still having some issues",
+      "technologyTag": ".css",
+      "description": "Idk what I have done",
+      "mood": "Perplexed",
+      "date": "2021-10-10",
+      "id": 7
+    },
+    {
+      "title": "asdf",
+      "technologyTag": "sadf",
+      "description": "asdf",
+      "mood": "Tenacious",
+      "date": "2021-03-10",
+      "id": 8
+    },
+    {
+      "title": "asdf",
+      "technologyTag": "asdf",
+      "description": "asdf",
+      "mood": "Perplexed",
+      "date": "",
+      "id": 9
     }
   ]
 }

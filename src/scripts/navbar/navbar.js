@@ -2,8 +2,17 @@ export const NavBar = () => {
     return`
     <ul class="navbar">
     <li class="nav" class="active"><a href="/index.html">Journal</a></li>
-    <li class="nav"><a href="/version1.html">No. 1</a></li>
-    <li class="searchbar"><input type="text" id="postSearch" placeholder="Search posts..." /></li>
+    <li class="moodbar">   
+        <label for="FilterMood">Filter Mood:</label>
+        <select name="FilterMood" id="moodselector">
+            <option value="AllPosts">All Posts</option>
+            <option value="Perplexed">Perplexed</option>
+            <option value="Weepy">Weepy</option>
+            <option value="Tenacious">Tenacious</option>
+            <option value="Marvelous">Marvelous</option>
+            <option value="Creative">Creative</option>
+        </select>
+    </li>
 </ul>
     `
 }
