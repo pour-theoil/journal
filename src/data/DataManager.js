@@ -37,6 +37,27 @@ export const deletePost = (postId) => {
         .then(getjournalentry)
 }
 
+export const getSingleEntry = (postId) => {
+    return fetch(`http://localhost:8088/entries/${postId}`)
+        .then(response => response.json())
+}
+
+export const updateEntry = (postObj) => {
+    return fetch(`http://localhost:8088/entries/${postObj.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(postObj)
+    })
+        .then(response => response.json())
+        .then(getjournalentry)
+}
+
+
+
+
+
 
 export const usePostCollection = () => {
   //Best practice: we don't want to alter the original state, so
