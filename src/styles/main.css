@@ -89,7 +89,7 @@ h1{
     flex-direction: column;
 }
 .newPost__description {
-    width: 100%;
+    width: 99%;
     min-height: 5em;
 }
 
