@@ -1,4 +1,4 @@
-import { getjournalentry, createPost, usePostCollection } from "../data/DataManager.js";
+import { getjournalentry, createPost, usePostCollection, deletePost } from "../data/DataManager.js";
 import { getJournal } from "./journalentries/journallist.js";
 import { PostEntry } from "./journalentries/journalentry.js";
 import { NavBar } from "./navbar/navbar.js";
@@ -93,6 +93,16 @@ applicationElement.addEventListener("change", event => {
       console.log(`User wants to see ${currentmood} mood`)
       //invoke a filter function passing the year as an argument
       showFilteredPosts(currentmood);
+    }
+})
+
+applicationElement.addEventListener("click", event => {
+    if(event.target.id.startsWith("delete")) {
+        const postId = event.target.id.split("__")[1];
+        deletePost(postId)
+        .then(response => {
+            startJournal();
+        })
     }
 })
 
