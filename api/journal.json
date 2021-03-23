@@ -12,41 +12,12 @@
       "id": 2
     },
     {
-      "title": "Teamwork, makes the dream work",
-      "date": "2021-02-28",
+      "title": "Teamwork",
+      "technologyTag": " .css, .html, git, github",
       "description": "After diving deep into .css, we were thrown into our very first <a href='https://github.com/nss-day-cohort-47/hello-world-vigilant-venutians'>team project</a>. The goal was to master git and github, implement flex box, and of course work as a team. The dynamics were not always easy, but we were able to come together to create a working html website with some interesting responsponsive characteristics!",
-      "technologyTag": [
-        " .css",
-        " .html",
-        " git",
-        " github"
-      ],
       "mood": "Weepy",
+      "date": "2021-02-28",
       "id": 3
-    },
-    {
-      "title": "Updating My Journal with an API",
-      "date": "2021-03-05",
-      "description": "This is test of popstman learning how to create ",
-      "technologyTag": "Postman Json API",
-      "mood": "happy",
-      "id": 1
-    },
-    {
-      "title": "Learning how to input",
-      "technologyTag": ".json .js",
-      "description": "This is trying to get the date function to work",
-      "date": "2021-03-10",
-      "mood": "happy",
-      "id": 4
-    },
-    {
-      "title": "Adding Moods",
-      "technologyTag": ".json .js",
-      "description": "I feel like this has been quite a fun challenge. Learning how to implement drop down menus was the first task. After that getting the spacing and css to work as a bit of a task. I had a couple of issues controlling the filter so that it would list all of the possible moods as well as then being able to see all of the posts again. Next steps... a little css refresh to react better to different screen sizes.",
-      "mood": "Perplexed",
-      "date": "2021-03-11",
-      "id": 5
     }
   ]
 }

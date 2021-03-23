@@ -1,4 +1,4 @@
-import { getjournalentry, createPost, usePostCollection, deletePost } from "../data/DataManager.js";
+import { getjournalentry, createPost, usePostCollection, deletePost, getSingleEntry, updateEntry } from "../data/DataManager.js";
 import { getJournal } from "./journalentries/journallist.js";
 import { PostEntry } from "./journalentries/journalentry.js";
 import { NavBar } from "./navbar/navbar.js";
@@ -105,6 +105,47 @@ applicationElement.addEventListener("click", event => {
         })
     }
 })
+
+applicationElement.addEventListener("click", event => {
+    if(event.target.id.startsWith("edit")) {
+        const postmethod = event.target.id.split("__")[0];
+        const postId = event.target.id.split("__")[1];
+        getSingleEntry(postId)
+            .then(response => {
+                const entryElement = document.querySelector(".formBox");
+                entryElement.innerHTML = PostEntry(response, postmethod)
+            })
+    }
+})
+
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("updatePost")) {
+        const postId = event.target.id.split("__")[1];
+        const title = document.querySelector("input[name='postTitle']").value
+        const tag = document.querySelector("input[name='postTag']").value
+        const description = document.querySelector("textarea[name='postDescription']").value
+        const date = document.querySelector("input[name='postDate']").value
+        const mood = document.querySelector("select[name='postMood']").value
+        const postObject = {
+            title: title,
+            technologyTag: tag,
+            description: description,
+            mood: mood,
+            date: date,
+            id: postId
+    }
+
+    updateEntry(postObject)
+      .then(response => {
+        startJournal();
+        const entryElement = document.querySelector(".formBox");
+        entryElement.innerHTML = PostEntry();
+      })
+
+    }
+})
+
 
 showNavBar();
 showPostEntry();
