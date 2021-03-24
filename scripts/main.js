@@ -224,6 +224,6 @@ applicationElement.addEventListener("click", event => {
     }
 })
 
-showLoginRegister();
+// showLoginRegister();
 showPostEntry();
 startJournal();
