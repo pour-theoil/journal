@@ -1,5 +1,7 @@
 export const PostEntry = (postObject, postmethod) => {
     if (postmethod === "edit") {
+        const moodList = ["Perplexed","Tenacious","Marvelous"]
+
         return `
         <form>
         <div class=inputTags>

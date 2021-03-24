@@ -18,6 +18,21 @@
       "mood": "Weepy",
       "date": "2021-02-28",
       "id": 3
+    },
+    {
+      "title": "CRUD and Hosting",
+      "technologyTag": ".github .js .json",
+      "description": "We are one step closer to making it all work! For this site I have implemented full CRUD functionality. Additionally, reading through all of the GitHub pages documentation, it was pretty cool to finally get this project to work. Next thing is creating some log in credentials to protect others from posting...",
+      "mood": "Marvelous",
+      "date": "2021-03-23",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "name": "Logan Demmy",
+      "email": "frank.demmy@gmail.com",
+      "id": 1
     }
   ]
 }
