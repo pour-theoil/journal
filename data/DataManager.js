@@ -1,8 +1,72 @@
-let orderedResponse = [];
+//User login information
+//const apiUrl = "http://localhost:8088"
+const apiUrl = "https://firstjsonserver.herokuapp.com"
 
+let loggedInUser = {
+    name: "",
+    email: ""
+}
+  
+export const logoutUser = () => {
+    loggedInUser = {}
+}
+
+export const setLoggedInUser = (userObj) => {
+    loggedInUser = userObj;
+}
+
+export const getLoggedInUser = () => {
+	return loggedInUser;
+}
+
+export const registerUser = (userObj) => {
+    return fetch(`${apiUrl}/users`, {
+      method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userObj)
+    })
+    .then(response => response.json())
+    .then(parsedUser => {
+      setLoggedInUser(parsedUser);
+      return getLoggedInUser();
+    })
+}
+
+export const loginUser = (userObj) => {
+    return fetch(`${apiUrl}/users?name=${userObj.name}&email=${userObj.email}`)
+    .then(response => response.json())
+    .then(parsedUser => {
+      //is there a user?
+      console.log("parsedUser", parsedUser) //data is returned as an array
+      if (parsedUser.length > 0){
+        setLoggedInUser(parsedUser[0]);
+        return getLoggedInUser();
+      }else {
+        //no user
+        return false;
+      }
+    })
+  }
+
+export const getPosts = () => {
+    const userId = getLoggedInUser().id
+    return fetch(`${apiUrl}/posts?_expand=user`)
+      .then(response => response.json())
+      .then(parsedResponse => {
+        console.log("data with user", parsedResponse)
+        postCollection = parsedResponse
+        return parsedResponse;
+      })
+}
+
+
+
+let orderedResponse = [];
 export const getjournalentry = () => {
 
-    return fetch("http://localhost:8088/entries")
+    return fetch(`${apiUrl}/entries`)
     .then(response => response.json())
     .then(parsedResponse => {
         orderedResponse = parsedResponse.reverse();
@@ -13,7 +77,7 @@ export const getjournalentry = () => {
 }
 
 export const createPost = postObj => {
-    return fetch("http://localhost:8088/entries", {
+    return fetch(`${apiUrl}/entries`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -27,7 +91,7 @@ export const createPost = postObj => {
 }
 
 export const deletePost = (postId) => {
-    return fetch(`http://localhost:8088/entries/${postId}`, {
+    return fetch(`${apiUrl}/entries/${postId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
@@ -38,12 +102,12 @@ export const deletePost = (postId) => {
 }
 
 export const getSingleEntry = (postId) => {
-    return fetch(`http://localhost:8088/entries/${postId}`)
+    return fetch(`${apiUrl}/entries/${postId}`)
         .then(response => response.json())
 }
 
 export const updateEntry = (postObj) => {
-    return fetch(`http://localhost:8088/entries/${postObj.id}`, {
+    return fetch(`${apiUrl}/${postObj.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
