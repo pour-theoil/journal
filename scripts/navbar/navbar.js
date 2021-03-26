@@ -2,7 +2,8 @@ export const NavBar = () => {
     return`
     <ul class="navbar">
     <li class="nav" class="active"><a href="/index.html">Journal</a></li>
-    <li class="nav" " class="active"><a id="logUserOut">Log Out</a></li>
+    <li class="nav" "class="active"><a id="messages">Messages</a></li>
+    <li class="nav" "class="active"><a id="logUserOut">Log Out</a></li>
     <li class="moodbar">   
         <label for="FilterMood">Filter Mood:</label>
         <select name="FilterMood" id="moodselector">
