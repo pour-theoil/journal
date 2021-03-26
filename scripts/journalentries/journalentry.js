@@ -1,3 +1,5 @@
+import { getLoggedInUser } from "../../data/DataManager.js"
+
 export const PostEntry = (postObject, postmethod) => {
     if (postmethod === "edit") {
         const moodList = ["Perplexed","Tenacious","Marvelous"]
@@ -36,8 +38,7 @@ export const PostEntry = (postObject, postmethod) => {
         </div>
         <textarea name="postDescription"
             class ="newPost__input newPost__description" placeholder="Journal entry text... ">${postObject.description}</textarea>
-        <button id="updatePost__${postObject.id}">Save Edit</button>
-        <button id="newPost__cancel">Cancel</button>
+            <button id="updatePost__${postObject.id}">Save Edit</button><button id="newPost__cancel">Cancel</button>
     </form>    
     `
     } else return `

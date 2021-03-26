@@ -1,7 +1,7 @@
 export const RegisterForm = () => {
 
 	return `
-		<div class="newPost">
+		<div class="login">
 		<h3>Register</h3>
 			<div>
 				<input value=""

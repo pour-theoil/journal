@@ -1,7 +1,7 @@
 export const LoginForm = () => {
 
 	return `
-		<div class="newPost">
+		<div class="login">
 		<h3>Login</h3>
 			<div>
 				<input value=""

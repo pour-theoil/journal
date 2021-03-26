@@ -17,6 +17,14 @@
   vertical-align:baseline;
 }
 
+#logOutUser {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1em ;
+  text-decoration: none;
+}
+
 .nav a {
   display: block;
   color: white;

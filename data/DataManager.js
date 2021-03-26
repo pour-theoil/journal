@@ -1,4 +1,4 @@
-//User login information
+//Comment out depending on local or hosted testing
 //const apiUrl = "http://localhost:8088"
 const apiUrl = "https://firstjsonserver.herokuapp.com"
 
@@ -6,7 +6,13 @@ let loggedInUser = {
     name: "",
     email: ""
 }
-  
+
+export const getLikes = (postId) => {
+    return fetch(`${apiUrl}/userLikes?postId=${postId}`)
+      .then(response => response.json())
+}
+
+
 export const logoutUser = () => {
     loggedInUser = {}
 }
@@ -66,7 +72,7 @@ export const getPosts = () => {
 let orderedResponse = [];
 export const getjournalentry = () => {
 
-    return fetch(`${apiUrl}/entries`)
+    return fetch(`${apiUrl}/entries?_expand=user`)
     .then(response => response.json())
     .then(parsedResponse => {
         orderedResponse = parsedResponse.reverse();
