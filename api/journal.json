@@ -9,7 +9,8 @@
         " .html"
       ],
       "mood": "Creative",
-      "id": 2
+      "id": 2,
+      "userId": 1
     },
     {
       "title": "Teamwork",
@@ -17,7 +18,8 @@
       "description": "After diving deep into .css, we were thrown into our very first <a href='https://github.com/nss-day-cohort-47/hello-world-vigilant-venutians'>team project</a>. The goal was to master git and github, implement flex box, and of course work as a team. The dynamics were not always easy, but we were able to come together to create a working html website with some interesting responsponsive characteristics!",
       "mood": "Weepy",
       "date": "2021-02-28",
-      "id": 3
+      "id": 3,
+      "userId": 1
     },
     {
       "title": "CRUD and Hosting",
@@ -25,7 +27,8 @@
       "description": "We are one step closer to making it all work! For this site I have implemented full CRUD functionality. Additionally, reading through all of the GitHub pages documentation, it was pretty cool to finally get this project to work. Next thing is creating some log in credentials to protect others from posting...",
       "mood": "Marvelous",
       "date": "2021-03-23",
-      "id": 4
+      "id": 4,
+      "userId": 1
     }
   ],
   "users": [
@@ -34,5 +37,7 @@
       "email": "frank.demmy@gmail.com",
       "id": 1
     }
-  ]
+  ],
+  "userLikes": [],
+  "messages": []
 }

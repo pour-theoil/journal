@@ -1,4 +1,4 @@
-import { getjournalentry, createPost, usePostCollection, 
+import { getjournalentry, createPost, usePostCollection, logoutUser, getLoggedInUser,
     deletePost, getSingleEntry, updateEntry, setLoggedInUser, registerUser, loginUser  } from "../data/DataManager.js";
 import { getJournal } from "./journalentries/journallist.js";
 import { PostEntry } from "./journalentries/journalentry.js";
@@ -158,24 +158,24 @@ applicationElement.addEventListener("click", event => {
 })
 
 
-// const checkForUser = () => {
-//     if (sessionStorage.getItem("user")){
-//         setLoggedInUser(JSON.parse(sessionStorage.getItem("user")));
-//         startJournal();
-//     }else {
-//          showLoginRegister();
-//     }
-// }
+const checkForUser = () => {
+    if (sessionStorage.getItem("user")){
+        setLoggedInUser(JSON.parse(sessionStorage.getItem("user")));
+        startJournal();
+    }else {
+         showLoginRegister();
+    }
+}
 
-// const showLoginRegister = () => {
-//     showNavBar();
-//     const entryElement = document.querySelector(".formBox");
-//     //template strings can be used here too
-//     entryElement.innerHTML = `${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
-//     //make sure the post list is cleared out too
-//   const postElement = document.querySelector(".postList");
-//   postElement.innerHTML = "";
-// }
+const showLoginRegister = () => {
+    showNavBar();
+    const entryElement = document.querySelector(".formBox");
+    //template strings can be used here too
+    entryElement.innerHTML = `${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
+    //make sure the post list is cleared out too
+  const postElement = document.querySelector("#journal");
+  postElement.innerHTML = '<h2 class="loadingmessage">Please log in to view content</h2>';
+}
 
 applicationElement.addEventListener("click", event => {
     event.preventDefault();
@@ -190,6 +190,7 @@ applicationElement.addEventListener("click", event => {
         if(dbUserObj){
           sessionStorage.setItem("user", JSON.stringify(dbUserObj));
           startJournal();
+          showPostEntry();
         }else {
           //got a false value - no user
           const entryElement = document.querySelector(".formBox");
@@ -216,7 +217,7 @@ applicationElement.addEventListener("click", event => {
 })
 
 applicationElement.addEventListener("click", event => {
-    if (event.target.id === "logout") {
+    if (event.target.id === "logUserOut") {
       logoutUser();
       console.log(getLoggedInUser());
       sessionStorage.clear();
@@ -224,6 +225,7 @@ applicationElement.addEventListener("click", event => {
     }
 })
 
-// showLoginRegister();
+showLoginRegister();
 showPostEntry();
-startJournal();
+checkForUser();
+// startJournal();

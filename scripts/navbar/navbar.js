@@ -2,6 +2,7 @@ export const NavBar = () => {
     return`
     <ul class="navbar">
     <li class="nav" class="active"><a href="/index.html">Journal</a></li>
+    <li class="nav" " class="active"><a id="logUserOut">Log Out</a></li>
     <li class="moodbar">   
         <label for="FilterMood">Filter Mood:</label>
         <select name="FilterMood" id="moodselector">
@@ -13,6 +14,7 @@ export const NavBar = () => {
             <option value="Creative">Creative</option>
         </select>
     </li>
-</ul>
+    
+    </ul>
     `
 }
