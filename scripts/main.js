@@ -5,6 +5,7 @@ import { PostEntry } from "./journalentries/journalentry.js";
 import { NavBar } from "./navbar/navbar.js";
 import { LoginForm } from "./authorization/LoginForm.js"
 import { RegisterForm } from './authorization/RegisterForm.js'
+import { messageBoard } from "./journalentries/messages.js"
 
 
 const showNavBar = () => {
@@ -40,6 +41,12 @@ const showFilteredPosts = (mood) => {
     postElement.innerHTML = getJournal(filteredData);
 }
 
+const showMessageEntry = () => { 
+  //Get a reference to the location on the DOM where the nav will display
+  const entryElement = document.querySelector(".formBox");
+  entryElement.innerHTML = messageBoard();
+  
+}
 
 const showPostEntry = () => { 
     //Get a reference to the location on the DOM where the nav will display
@@ -190,7 +197,9 @@ applicationElement.addEventListener("click", event => {
         if(dbUserObj){
           sessionStorage.setItem("user", JSON.stringify(dbUserObj));
           startJournal();
-          showPostEntry();
+          if(dbUserObj.admin) {
+            showPostEntry();
+          } else {showMessageEntry()}
         }else {
           //got a false value - no user
           const entryElement = document.querySelector(".formBox");
@@ -206,12 +215,14 @@ applicationElement.addEventListener("click", event => {
       //collect all the details into an object
       const userObject = {
         name: document.querySelector("input[name='registerName']").value,
-        email: document.querySelector("input[name='registerEmail']").value
+        email: document.querySelector("input[name='registerEmail']").value,
+        admin: false
       }
       registerUser(userObject)
       .then(dbUserObj => {
         sessionStorage.setItem("user", JSON.stringify(dbUserObj));
         startJournal();
+        showMessageEntry();
       })
     }
 })
